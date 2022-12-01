@@ -1,11 +1,14 @@
 #Solution to part 1
 totalCals = 0 
 highestCals = 0 
-with open("day1.txt") as f:
-    for line in f:
+
+#opens file
+with open("day1.txt") as f: 
+    for line in f:          #get data from every line
         if(line.strip()):
             data = line.strip()
-            totalCals += (int(data))
+            totalCals += (int(data))    #sums calories together
+        #blank line 
         else:
             if(totalCals > highestCals):
                 highestCals = totalCals
@@ -22,6 +25,7 @@ with open("day1.txt") as f:
             data = line.strip()
             totalCals += (int(data)) 
         else:
+            #adjusts top 3 highest calories
             if(highest == 0):
                 highest = totalCals
             elif(totalCals > highest):
@@ -34,4 +38,5 @@ with open("day1.txt") as f:
             elif(totalCals > third):
                 third = totalCals 
             totalCals = 0 
+#prints sum of highest three calories
 print("Sum of highest three calories: ",highest + second + third)
