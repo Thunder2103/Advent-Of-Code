@@ -10,7 +10,6 @@ stack9 = []
 
 numArray = []
 
-
 stackDict = {
     1: stack1,
     2: stack2, 
