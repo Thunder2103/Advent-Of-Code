@@ -1,7 +1,6 @@
 #gets values from line and seperates by space, each word is index, can be used for ints to 
 i = 0 
 index = 0
-index2 = 0 
 sum = 0
 
 #Solution 1
