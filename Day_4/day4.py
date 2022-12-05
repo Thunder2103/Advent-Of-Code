@@ -11,7 +11,6 @@ with open("day4.txt") as f:
     yes = ""
     for line in f: #for each line in f 
             index = 0  
-            index2 = 0 
             i = 0
             data = line.strip().split(",")
             
