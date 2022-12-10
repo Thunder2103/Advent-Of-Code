@@ -126,7 +126,9 @@ with open("day9.txt") as f:
                     visited+=1
                     nodesVisited.append([snake[9][0], snake[9][1]]) 
 
-print("Solution 2", visited)
+print("Solution 2", visited) 
+
+
       
                
             
