@@ -8,10 +8,6 @@ class Monkey:
         self.test = 0
         pass
 
-
-
-
-
 product = 1
 monkeys = [Monkey() for i in range(8)] 
 inspected = [0 for i in range(8)]
