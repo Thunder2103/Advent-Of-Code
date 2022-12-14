@@ -1,3 +1,4 @@
+#This one doesn't run as slow as other days, that's good I guess
 #Solution 1
 rocks = set()
 sand = set()
@@ -55,8 +56,8 @@ print("Solution 1:", len(sand))
 #Solution 2
 rocks = set()
 sand = set()
-abyss = 0
 lowest = 0
+floor = 0
 
 with open("day14.txt") as f:
     for line in f:
@@ -81,7 +82,6 @@ with open("day14.txt") as f:
                 lowest = max(current[1], next[1]) 
             
 lowest+=2
-floor = 0
 while not floor:
     settled = 0
     x = 500 
