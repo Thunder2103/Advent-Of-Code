@@ -1,6 +1,9 @@
-#Not so elegant Dijkstra's shortest path
-#9000 was chosen to represent infinity since it's large enough to work
-#And it's over 9000
+# Not so elegant Dijkstra's shortest path
+# 9000 was chosen to represent infinity since it's large enough to work
+# And it's over 9000
+
+from puzzle_input import getFilePath
+
 class Node:
     def __init__(self, numVal, charVal, weight):
         self.numVal = numVal
@@ -10,7 +13,7 @@ class Node:
         self.visited = 0
         pass
 
-def neighbours_1(graph, node, x, y):
+def neighboursTaskOne(graph, node, x, y):
     
     if(y == 0):
         if(graph[x][y+1].numVal <= node.numVal + 1):
@@ -36,7 +39,11 @@ def neighbours_1(graph, node, x, y):
         if(graph[x-1][y].numVal <= node.numVal + 1):
             node.next.append(graph[x-1][y])   
 
-def dijkstra_1(graph, destination):  
+def taskOne(destination):  
+    graph = []
+    with open(getFilePath()) as f: 
+        for line in f:
+            graph.append(list(line.strip()))
     Q = []
     for a in range(len(graph)):
         for b in range(len(graph[a])):
@@ -52,7 +59,7 @@ def dijkstra_1(graph, destination):
                 
     for a in range(len(graph)):
         for b in range(len(graph[a])):
-            neighbours_1(graph, graph[a][b], a, b)
+            neighboursTaskOne(graph, graph[a][b], a, b)
     
     while(Q): 
         min = 9001
@@ -69,9 +76,9 @@ def dijkstra_1(graph, destination):
         Q.pop(remove)
         visiting.visited = 1
         if(visiting.charVal == "E"):
-            print("Solution 1:", visiting.distance)
+            return visiting.distance
 
-def neighbours_2(graph, node, x, y):
+def neighboursTaskTwo(graph, node, x, y):
     if(y == 0):
         if(graph[x][y+1].numVal >= node.numVal - 1):
             node.next.append(graph[x][y+1]) 
@@ -97,7 +104,11 @@ def neighbours_2(graph, node, x, y):
             node.next.append(graph[x-1][y])   
 
     
-def dijkstra_2(graph, destination):  
+def taskTwo(destination):
+    graph = []
+    with open(getFilePath()) as f: 
+        for line in f:
+            graph.append(list(line.strip()))  
     Q = []
     for a in range(len(graph)):
         for b in range(len(graph[a])):
@@ -113,7 +124,7 @@ def dijkstra_2(graph, destination):
                 
     for a in range(len(graph)):
         for b in range(len(graph[a])):
-            neighbours_2(graph, graph[a][b], a, b)
+            neighboursTaskTwo(graph, graph[a][b], a, b)
     
     lowest = 9000
     while(Q): 
@@ -132,18 +143,7 @@ def dijkstra_2(graph, destination):
         visiting.visited = 1
         if(visiting.charVal == "a" and visiting.distance < lowest):
             lowest = visiting.distance
-    print("Solution 2:", lowest) 
+    return lowest
 
-nodes = []
-with open("day12.txt") as f: 
-    for line in f:
-        nodes.append(list(line.strip()))
-
-dijkstra_1(nodes, "S")
-nodes.clear()
-
-with open("day12.txt") as f: 
-    for line in f:
-        nodes.append(list(line.strip()))
-
-dijkstra_2(nodes, "E")
+print(taskOne("S"))
+print(taskTwo("E"))

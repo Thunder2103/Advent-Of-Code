@@ -1,8 +1,16 @@
-# Advent-of-code-2022
+# Advent Of Code: 
 
-My attempt for Advent of Code 2022.
+This repository contains my solutions for: 
 
-Done in python.
+- [Advent Of Code 2022](https://adventofcode.com/)
+- [Advent Of Code 2023](https://adventofcode.com/2022) 
 
+## Advent Of Code 2022:
 
-https://adventofcode.com/2022/about
+Last Completed Day: Day 15 
+Programming Language(s): Python
+
+## Advent Of Code 2023:
+
+Last Completed Day: Day 2
+Programming Language(s): Python

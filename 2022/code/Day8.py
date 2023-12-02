@@ -1,6 +1,7 @@
-viewDistance = 0
+from puzzle_input import getFilePath
 
-#functions
+viewDistance = 0
+# Functions
 def check_right(trees, i, j): 
     global viewDistance
     for x in range(j+1, len(trees[i])): 
@@ -38,7 +39,7 @@ def check_column_up(trees, i, j):
     return 1
 
 visible = 0 
-with open("day8.txt") as f:
+with open(getFilePath()) as f:
     trees = [] 
     for line in f:
         data = line.strip()
@@ -87,5 +88,11 @@ with open("day8.txt") as f:
                 score = tmp 
             tmp = 1 
 
-print("Solution 1", visible)
-print("Solution 2", score)
+
+def taskOne():
+    return visible
+def taskTwo():
+    return score
+
+print(taskOne())
+print(taskTwo())
