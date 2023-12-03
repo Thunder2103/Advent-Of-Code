@@ -44,7 +44,6 @@ def taskOne():
     lineLength = 0
     engineArray = []
     symbolsArray = []
-
     with open(getFilePath()) as file:
         for line in file:
             line = line.rstrip()
@@ -56,10 +55,8 @@ def taskOne():
                 engineArray[lineNumber].append(char)
             lineNumber+=1
             numberLines+=1 
-        
         file.seek(0)
         lineLength = len(file.readline().rstrip())
-
     lineNumber = -1
     for i in range(len(symbolsArray)):
         lineNumber+=1
@@ -92,7 +89,6 @@ def taskTwo():
     lineLength = 0
     engineArray = []
     gearsArray = []
-
     with open(getFilePath()) as file:
         for line in file:
             line = line.rstrip()
@@ -104,10 +100,8 @@ def taskTwo():
                 engineArray[lineNumber].append(char)
             lineNumber+=1
             numberLines+=1 
-        
         file.seek(0)
         lineLength = len(file.readline().rstrip())
-
     lineNumber = -1
     for i in range(len(gearsArray)):
         lineNumber+=1
@@ -141,7 +135,6 @@ def taskTwo():
                 if(checkRight(gearsArray[i][j], i + 1, engineArray, lineLength)):
                     ratio *= getNumber(gearsArray[i][j] + 1, engineArray, i + 1, lineLength)
                     numAdjGear += 1
-            
             if(numAdjGear == 2): 
                 total += ratio
     return total    
