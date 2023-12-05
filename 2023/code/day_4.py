@@ -2,12 +2,11 @@ from puzzle_input import getFilePath
 import re
 
 def parse(line):
-    lst = []
     nums =  re.sub("^Card\s\d:\s", "", line).rstrip().split("|")
-    for section in nums:
-        section = re.sub("^[\s]+|[\s]+$", "", section).split(" ") 
-        lst.append(set([i for i in section if i != ""]))
-    return lst
+    for i in range (len(nums)):
+        nums[i] = re.sub("^[\s]+|[\s]+$", "", nums[i]).split(" ") 
+        nums[i] = (set([i for i in nums[i] if i != ""]))
+    return nums
 
 def taskOne():
     total = 0
@@ -27,10 +26,10 @@ def taskTwo():
             numbers = parse(line)
             matches[index] = len(numbers[0].intersection(numbers[1]))
             scratchCards[index] = 1
-        for key, value in matches.items():
-            for i in range(1, value + 1):
-                scratchCards[key + i] += scratchCards[key]
-            total += scratchCards[key]
-        return total    
+    for key, value in matches.items():
+        for i in range(1, value + 1):
+            scratchCards[key + i] += scratchCards[key]
+        total += scratchCards[key]
+    return total    
 print(taskOne())
 print(taskTwo())

@@ -2,10 +2,10 @@ import re
 from puzzle_input import getFilePath
 def taskOne():
     with open(getFilePath()) as file:
-        sum = 0
+        total = 0
         for line in file:
-            sum += mergeDigits(re.findall("[0-9]", line))
-    return sum 
+            total += mergeDigits(re.findall("[0-9]", line))
+    return total 
 
 
 def mergeDigits(nums):
@@ -29,11 +29,11 @@ def taskTwo():
     }
 
     with open(getFilePath()) as file:
-        sum = 0
+        total = 0
         for line in file:
             for digit, numeric in digits.items():
                 line = line.replace(digit, numeric)
-            sum += mergeDigits(re.findall("[0-9]", line))
-        return sum 
+            total += mergeDigits(re.findall("[0-9]", line))
+        return total 
 print(taskOne())
 print(taskTwo())
