@@ -28,6 +28,15 @@ def insertList(hand, handLst, jokers):
             if(pokercards[hand[i]] > pokercards[sortedHand[0][i]]): break
     return len(handLst)
 
+def calculateTotal(handStrengths):
+    total = 0
+    counter = 1
+    for level in handStrengths:
+        for hand in level:
+            total += int(hand[1]) * counter
+            counter += 1
+    return total
+
 def taskOne():
     with open(getFilePath()) as file:
         handStrengths = [[] for _ in range(TYPES)]
@@ -52,14 +61,7 @@ def taskOne():
             handStrengths[largestOccurence + pairs].insert(insertList(hand[0], handStrengths[largestOccurence + pairs], False), hand)
         else:
             handStrengths[largestOccurence + 1].insert(insertList(hand[0], handStrengths[largestOccurence + 1], False), hand)
-    
-    total = 0
-    counter = 1
-    for level in handStrengths:
-        for hand in level:
-            total += int(hand[1]) * counter
-            counter += 1
-    return total
+    return calculateTotal(handStrengths)
 
 def taskTwo():
     with open(getFilePath()) as file:
@@ -92,16 +94,8 @@ def taskTwo():
         elif(largestOccurence == 3):
             handStrengths[largestOccurence + pairs].insert(insertList(hand[0], handStrengths[largestOccurence + pairs], True), hand)
         else:
-            handStrengths[largestOccurence + 1].insert(insertList(hand[0], handStrengths[largestOccurence + 1], True), hand)
-    
-    total = 0
-    counter = 1
-    for level in handStrengths:
-        for hand in level:
-            total += int(hand[1]) * counter
-            counter += 1
-    return total
-
+            handStrengths[largestOccurence + 1].insert(insertList(hand[0], handStrengths[largestOccurence + 1], True), hand)    
+    return calculateTotal(handStrengths)
 
 print(taskOne())
 print(taskTwo())  
