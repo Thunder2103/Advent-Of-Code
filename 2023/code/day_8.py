@@ -53,7 +53,7 @@ def taskTwo():
         for _, node in nodes.items(): nearestEnd.append(traverse(instructions, node))
     lcm = 1 
     for num in nearestEnd:
-        lcm = lcm * num // math.gcd(lcm, num)
+        lcm = math.lcm(lcm, num)
     return lcm
 
 print(taskOne())
