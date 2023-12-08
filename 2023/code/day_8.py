@@ -18,10 +18,8 @@ def createNetwork(file):
                 nodeDict[nodes[0]] = Node(nodes[0])
                 if(nodes[0][-1] == "A" and nodes[0] not in startDict):
                     startDict[nodes[0]] =   nodeDict[nodes[0]]
-            if(nodes[1] not in nodeDict):
-                nodeDict[nodes[1]] = Node(nodes[1])
-            if(nodes[2] not in nodeDict):
-                nodeDict[nodes[2]] = Node(nodes[2])
+            if(nodes[1] not in nodeDict): nodeDict[nodes[1]] = Node(nodes[1])
+            if(nodes[2] not in nodeDict): nodeDict[nodes[2]] = Node(nodes[2])
             nodeDict[nodes[0]].left = nodeDict[nodes[1]]
             nodeDict[nodes[0]].right = nodeDict[nodes[2]]
     return startDict
@@ -32,14 +30,10 @@ def traverse(instructions, startNode):
     n = len(instructions)
     steps = 0
     while(True):
-        if(currentNode.val[-1] == "Z"): 
-            break
-        if(currentNode.left.val == currentNode.val and currentNode.right.val == currentNode.val): 
-            break 
-        if(instructions[i] == "R"): 
-            currentNode = currentNode.right
-        if(instructions[i] == "L"): 
-            currentNode = currentNode.left
+        if(currentNode.val[-1] == "Z"): break
+        if(currentNode.left.val == currentNode.val and currentNode.right.val == currentNode.val): break 
+        if(instructions[i] == "R"): currentNode = currentNode.right
+        if(instructions[i] == "L"): currentNode = currentNode.left
         if(i == n - 1): i = 0
         else: i += 1
         steps += 1
@@ -56,11 +50,10 @@ def taskTwo():
     with open(getFilePath()) as file:
         instructions = [*file.readline().rstrip()]
         nodes = createNetwork(file)
-        for _, node in nodes.items():
-            nearestEnd.append(traverse(instructions, node))
+        for _, node in nodes.items(): nearestEnd.append(traverse(instructions, node))
     lcm = 1 
-    for i in nearestEnd:
-        lcm = lcm * i // math.gcd(lcm, i)
+    for num in nearestEnd:
+        lcm = lcm * num // math.gcd(lcm, num)
     return lcm
 
 print(taskOne())
