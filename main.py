@@ -27,7 +27,7 @@ def yearCommands():
     print("\t - exit -> close the program")
     
     while(True):
-        commandInput = input("Command: ") 
+        commandInput = input("Command: ").replace(" ", "") 
         if(commandInput in AOCYEARS): break
         elif(commandInput == "exit"): exit() 
         elif(commandInput == "song"): recommendSong()
@@ -42,7 +42,7 @@ def dayCommands(year):
     print("\t - exit -> close the program")
 
     while(True):
-        commandInput = input("Command: ")
+        commandInput = input("Command: ").replace(" ", "") 
         if(f"day_{commandInput}.py" in puzzleFiles): outputDay(year, f"day_{commandInput}", commandInput)
         elif(commandInput == "back"): yearCommands()
         elif(commandInput == "exit"): exit()
