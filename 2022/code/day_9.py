@@ -2,8 +2,10 @@
 # Does it work? Somehow
 # Did I spend too much time on this? For sure 
 
-from puzzle_input import getFilePath
-
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 def taskOne():
     snake = [[0,0] for i in range(2)]
@@ -131,5 +133,5 @@ def taskTwo():
                         nodesVisited.append([snake[9][0], snake[9][1]]) 
     return visited 
 
-print(taskOne()) 
-print(taskTwo()) 
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

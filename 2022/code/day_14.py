@@ -1,6 +1,8 @@
 # This one doesn't run as slow as other days, that's good I guess
-from puzzle_input import getFilePath
-
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 # Solution 1
 def taskOne():
@@ -116,5 +118,5 @@ def taskTwo():
                             
     return len(sand)
       
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

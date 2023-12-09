@@ -1,6 +1,9 @@
-from puzzle_input import getFilePath
 import re 
 import math
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 def parseTaskOne(line): 
     return re.findall("\d*\d", line)
@@ -33,7 +36,7 @@ def taskTwo():
         for i in range(1, time):
             if(((time - i) * i) > distance):
                 waysToFinish += 1
-        print(waysToFinish)
+        return waysToFinish
         
 # Optimum solution by calculating the discriminant. 
 def optimalTaskTwo():
@@ -42,5 +45,5 @@ def optimalTaskTwo():
         distance = parseTaskTwo(file.readline())
     return int(math.sqrt(time ** 2 - (4 * distance)))
 
-taskOne()
-taskTwo() 
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

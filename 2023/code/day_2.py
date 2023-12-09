@@ -1,6 +1,9 @@
 import math
 import re 
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 def parse(line):
     return re.sub("Game|[,;:]", "", line.strip("\n")).lstrip().split(" ")
@@ -44,7 +47,5 @@ def taskTwo():
             colorDict = dict.fromkeys(colorDict, 0) 
         return total
 
-print(taskOne())
-print(taskTwo())
-
-            
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

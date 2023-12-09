@@ -1,9 +1,11 @@
 # This one might take a while, so grab a coffee or something
-# A friend helped with part because I was very stuck
-
+# A friend helped with part 2 because I was very stuck
+ 
 import re
-from puzzle_input import getFilePath
-
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 # Solution 1
 def taskOne():
@@ -58,11 +60,11 @@ def taskOne():
                     if((xCord - c, y) not in beacons):
                         nobeacons.add((xCord - c, y))
         i+=1
-    print(len(nobeacons))
+    return len(nobeacons)
 
 # Solution 2
 def taskTwo():
-    print("WARNING: Task Two takes very long time to finish!")
+    print("WARNING: Task Two takes ~90 seconds to finish!")
     sensors = []
     with open(getFilePath()) as f:
         for line in f:
@@ -84,15 +86,9 @@ def taskTwo():
                     beacon = False
                     break
             if(beacon):
-                print(x*4000000 + y)
-                exit()
+                return x*4000000 + y
             x+=1
         y+=1
 
-
-
-
-taskOne()
-taskTwo()
-
-
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

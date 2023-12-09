@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 def nextReading(histroy: list):
     if(all(x == 0 for x in histroy)): return 0
@@ -24,5 +27,5 @@ def taskTwo():
         total += previousReading(histroy)    
     return total
 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

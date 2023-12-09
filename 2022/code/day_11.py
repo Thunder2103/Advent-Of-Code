@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 class Monkey:
     def __init__(self):
@@ -121,5 +124,5 @@ def taskTwo():
     inspected = sorted(inspected)    
     return inspected[-2] * inspected[-1] 
 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

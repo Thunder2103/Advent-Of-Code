@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 TYPES = 7
 SIZEOFHAND = 5
@@ -97,5 +100,5 @@ def taskTwo():
             handStrengths[largestOccurence + 1].insert(insertList(hand[0], handStrengths[largestOccurence + 1], True), hand)    
     return calculateTotal(handStrengths)
 
-print(taskOne())
-print(taskTwo())  
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

@@ -1,5 +1,9 @@
 import re
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
+
 def taskOne():
     with open(getFilePath()) as file:
         total = 0
@@ -35,5 +39,5 @@ def taskTwo():
                 line = line.replace(digit, numeric)
             total += mergeDigits(re.findall("[0-9]", line))
         return total 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

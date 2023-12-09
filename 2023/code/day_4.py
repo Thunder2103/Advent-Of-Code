@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 import re
 
 def parse(line):
@@ -31,5 +34,6 @@ def taskTwo():
             scratchCards[key + i] += scratchCards[key]
         total += scratchCards[key]
     return total    
-print(taskOne())
-print(taskTwo())
+
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

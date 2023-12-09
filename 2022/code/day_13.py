@@ -1,7 +1,10 @@
 # My solutions are getting longer and a lot less faster
 import ast
 import copy
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 def eval_num(left, right):
     if(left < right):
@@ -137,7 +140,5 @@ def taskTwo():
                 
     return (array.index([2]) + 1) * (array.index([6]) + 1)
 
-
-print(taskOne())
-print(taskTwo())
-
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

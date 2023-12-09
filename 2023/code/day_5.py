@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 import re
 
 def parseSeeds(line):
@@ -104,5 +107,6 @@ def taskTwo():
         mappedVal = splitRanges(mappedVal, humidToLoc)
         mappedVal.sort()
         return mappedVal[0][0]
-print(taskOne())  
-print(taskTwo())
+
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

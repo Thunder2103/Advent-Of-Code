@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 #Dictionary to hold lower case letters and subsequent values
 alphabet = {
@@ -98,5 +101,5 @@ def taskTwo():
             k+=3
     return sum
 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

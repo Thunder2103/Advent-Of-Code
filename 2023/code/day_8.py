@@ -1,6 +1,9 @@
-from puzzle_input import getFilePath
 import re
 import math 
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 class Node():
     def __init__(self, val):
@@ -56,5 +59,5 @@ def taskTwo():
         lcm = math.lcm(lcm, num)
     return lcm
 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 # Solution 1
 def taskOne():
@@ -39,7 +42,7 @@ def taskOne():
                 stack[int(data[5])-1].insert(0, popped) 
                 x+=1
             x = 1
-    return [i[0] for i in stack] 
+    return "".join([i[0] for i in stack]) 
 
 def taskTwo(): 
     value = 9
@@ -78,7 +81,7 @@ def taskTwo():
                 popped = stack[int(data[3])-1].pop(loop - 1)
                 stack[int(data[5])-1].insert(0, popped) 
                 loop-=1
-    return [i[0] for i in stack] 
+    return "".join([i[0] for i in stack]) 
 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")

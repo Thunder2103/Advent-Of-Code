@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 # Solution 1
 def taskOne():
@@ -17,7 +20,6 @@ def taskOne():
                 else: cycle+=1
                 if(cycle == 20 or ((cycle / 20) % 2 == 1 and (cycle / 20) <= 11)): sum += (x * cycle)
     return sum      
-
 
 # Solution two
 def taskTwo():
@@ -46,13 +48,5 @@ def taskTwo():
                     screen = ["." for item in screen]
                     cycle = 0
                 
-
-print(taskOne()) 
+print(f"Part 1: {taskOne()}")
 taskTwo()
-
-            
-            
-
-
-
-

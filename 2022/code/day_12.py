@@ -2,8 +2,10 @@
 # 9000 was chosen to represent infinity since it's large enough to work
 # And it's over 9000
 
-from puzzle_input import getFilePath
-
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 class Node:
     def __init__(self, numVal, charVal, weight):
         self.numVal = numVal
@@ -145,5 +147,5 @@ def taskTwo(destination):
             lowest = visiting.distance
     return lowest
 
-print(taskOne("S"))
-print(taskTwo("E"))
+print(f"Part 1: {taskOne('S')}")
+print(f"Part 2: {taskTwo('E')}")

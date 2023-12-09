@@ -1,4 +1,7 @@
-from puzzle_input import getFilePath
+if(__name__ == "__main__"):
+    from puzzle_input import getFilePath
+else:
+    from .puzzle_input import getFilePath
 
 def getNumber(index, engineArray, lineNumber, lineLength):
     number = engineArray[lineNumber][index]
@@ -139,5 +142,5 @@ def taskTwo():
                 total += ratio
     return total    
 
-print(taskOne())
-print(taskTwo())
+print(f"Part 1: {taskOne()}")
+print(f"Part 2: {taskTwo()}")
