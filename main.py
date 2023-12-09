@@ -1,5 +1,6 @@
 import os 
 import importlib
+import random
 
 DIRPATH = "../Advent-Of-Code"
 
@@ -22,18 +23,18 @@ def yearCommands():
     print("Type one of the commands below:")
     for year in AOCYEARS:
         print(f"\t - {year} -> solutions for {year}")
+    print("\t - song -> Recommend a song Tom likes")    
     print("\t - exit -> close the program")
     
     while(True):
         commandInput = input("Command: ") 
         if(commandInput in AOCYEARS): break
-        elif(commandInput == "exit"):
-            exit() 
+        elif(commandInput == "exit"): exit() 
+        elif(commandInput == "song"): recommendSong()
     dayCommands(commandInput)
 
 def dayCommands(year):
     puzzleFiles = [file for file in os.listdir(f"{DIRPATH}/{year}/code") if file.endswith(".py") and file != "puzzle_input.py" and file != "__init__.py"] 
-    print(puzzleFiles)
     print("\nType one of the commands below:")
     for i, _ in enumerate(puzzleFiles):
         print(f"\t - {i+1} -> Solutions for day {i+1}")
@@ -50,4 +51,7 @@ def outputDay(year, day, dayNumber):
     print(f"Solutions for Day {dayNumber}:")
     day = importlib.import_module(f"{year}.code.{day}")
 
+def recommendSong():
+    song = random.choice(open("songs.txt").read().splitlines())
+    print(f"Tom recommends: {song}" )
 intro()
