@@ -8,11 +8,11 @@ if(__name__ != "__main__"):
     exit()
 
 
-aocYears = [dir for dir in os.listdir(DIRPATH) if dir.isnumeric()] 
+AOCYEARS = [dir for dir in os.listdir(DIRPATH) if dir.isnumeric()] 
 def intro():
     print("Weclome to Tom's Advent of Code solutions!")
-    n = len(aocYears)
-    for index, year in enumerate(aocYears):
+    n = len(AOCYEARS)
+    for index, year in enumerate(AOCYEARS):
         if(index == n - 1): print(f" and {year}", "\n")
         elif(index == 0): print(f"Available years: {year}", end="")
         else: print(f", {year}", end="")
@@ -20,20 +20,20 @@ def intro():
 
 def yearCommands():
     print("Type one of the commands below:")
-    for year in aocYears:
+    for year in AOCYEARS:
         print(f"\t - {year} -> solutions for {year}")
     print("\t - exit -> close the program")
     
     while(True):
         commandInput = input("Command: ") 
-        if(commandInput in aocYears): break
+        if(commandInput in AOCYEARS): break
         elif(commandInput == "exit"):
             exit() 
     dayCommands(commandInput)
 
 def dayCommands(year):
     puzzleFiles = [file for file in os.listdir(f"{DIRPATH}/{year}/code") if file.endswith(".py") and file != "puzzle_input.py"] 
-    print("\nType one of the commands blow:")
+    print("\nType one of the commands below:")
     for i, _ in enumerate(puzzleFiles):
         print(f"\t - {i+1} -> Solutions for day {i+1}")
     print("\t - back -> return to year selection")
