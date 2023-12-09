@@ -34,7 +34,7 @@ def yearCommands():
     dayCommands(commandInput)
 
 def dayCommands(year):
-    puzzleFiles = [file for file in os.listdir(f"{DIRPATH}/{year}/code") if file.endswith(".py") and file != "puzzle_input.py" and file != "__init__.py"] 
+    puzzleFiles = [file for file in os.listdir(f"{DIRPATH}/{year}/code") if "day" in file] 
     print("\nType one of the commands below:")
     for i, _ in enumerate(puzzleFiles):
         print(f"\t - {i+1} -> Solutions for day {i+1}")
