@@ -1,13 +1,11 @@
 from puzzle_input import getFilePath
 
 def nextReading(histroy: list):
-    if(all(x == 0 for x in histroy)):
-        return 0
+    if(all(x == 0 for x in histroy)): return 0
     else: return histroy[-1] + nextReading([histroy[i + 1] - histroy[i] for i in range(len(histroy) - 1)]) 
 
 def previousReading(histroy: list):
-    if(all(x == 0 for x in histroy)):
-        return 0
+    if(all(x == 0 for x in histroy)): return 0
     else: return histroy[0] - previousReading([histroy[i + 1] - histroy[i] for i in range(len(histroy) - 1)]) 
 
 def taskOne():
