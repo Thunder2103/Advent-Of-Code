@@ -8,7 +8,7 @@ This repository contains my solutions for:
 | Year: | Last Completed Day: | Programming Language(s):|
 | ----- | ------------------- | ----------------------- | 
 |[2022](https://github.com/Thunder2103/Advent-Of-Code/tree/main/2022)  | Day 15              | Python                  |
-|[2023](https://github.com/Thunder2103/Advent-Of-Code/tree/main/2023)  | Day 10               | Python                  |   
+|[2023](https://github.com/Thunder2103/Advent-Of-Code/tree/main/2023)  | Day 11               | Python                 |   
 
 ## Running Solutions: 
 
