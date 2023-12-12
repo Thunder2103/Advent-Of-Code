@@ -20,7 +20,7 @@ def createNetwork(file):
             if(nodes[0] not in nodeDict):
                 nodeDict[nodes[0]] = Node(nodes[0])
                 if(nodes[0][-1] == "A" and nodes[0] not in startDict):
-                    startDict[nodes[0]] =   nodeDict[nodes[0]]
+                    startDict[nodes[0]] = nodeDict[nodes[0]]
             if(nodes[1] not in nodeDict): nodeDict[nodes[1]] = Node(nodes[1])
             if(nodes[2] not in nodeDict): nodeDict[nodes[2]] = Node(nodes[2])
             nodeDict[nodes[0]].left = nodeDict[nodes[1]]

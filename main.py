@@ -2,13 +2,11 @@ import os
 import importlib
 import random
 
-DIRPATH = "../Advent-Of-Code"
-
 if(__name__ != "__main__"): 
     print("This has nothing to import")
     exit()
 
-
+DIRPATH = "../Advent-Of-Code"
 AOCYEARS = [dir for dir in os.listdir(DIRPATH) if dir.isnumeric()] 
 def intro():
     print("Weclome to Tom's Advent of Code solutions!")
