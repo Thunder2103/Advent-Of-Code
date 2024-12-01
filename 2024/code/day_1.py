@@ -41,7 +41,7 @@ def taskTwo():
     
     total = 0
     for num in left_list:  
-        # Add number * ocurences in right list
+        # Add number * occurences in right list
         total += num * num_to_occur[num]    
     return total
 
