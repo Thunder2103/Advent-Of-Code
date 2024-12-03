@@ -9,7 +9,7 @@ else:
 def parse_input(task):  
     instructions = [] 
     # Regex for part one
-    exp = "mul\\([0-9]*,[0-9]*\\)"
+    exp = "mul\\([0-9]+,[0-9]+\\)"
     if(task == 2): 
         # Regex for part two
         exp += "|don't\\(\\)|do\\(\\)"
