@@ -55,7 +55,7 @@ def taskTwo():
             else:
                 idx = float("inf")
                 for conflict in conflicts:
-                    idx = min(fixed_update.index(conflict), idx)      
+                    k = min(fixed_update.index(conflict), idx)      
                 fixed_update.insert(idx, num)
             num_set.add(num) 
         update_sum += int(fixed_update[len(fixed_update) // 2])
