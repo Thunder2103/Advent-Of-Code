@@ -47,7 +47,7 @@ def getDayCommands(puzzleFiles):
     for file in puzzleFiles:
         dayNum = re.findall("[0-9]{1,2}",file)[0]
         dayCommand = "".join(re.split("day_|\\.py", file))
-        if(dayNum not in dayToCommands):
+        if(int(dayNum) not in dayToCommands):
             dayToCommands[int(dayNum)] = [] 
         dayToCommands[int(dayNum)].append(dayCommand) 
     return dayToCommands
@@ -55,10 +55,13 @@ def getDayCommands(puzzleFiles):
 
 def printDayCommands(puzzleFiles):
     dayCommands = getDayCommands(puzzleFiles) 
+    print(dayCommands)
     print("\nType one of the commands below:")
     for day in sorted(list(dayCommands.keys())): 
         for command in dayCommands[day]:
-            print(f"\t - {command} -> Solutions for day {day}")
+            if("CLI" in command): 
+                print(f"\t - {command} -> Visualiser for day {day} (Test Data Only)")
+            else: print(f"\t - {command} -> Solutions for day {day}")
     
     print("\t - back -> Return to year selection")
     print("\t - exit -> Close the program")
