@@ -50,12 +50,12 @@ def walk_route(current_coords, obstr_coords, max_x, max_y):
     return route_visited
 
         
-def taskOne():
+def task_one():
     current_coords, obstr_coords, max_x, max_y = parse_input() 
     return len(walk_route(current_coords, obstr_coords, max_x, max_y))
         
 
-def taskTwo(): 
+def task_two(): 
     start_coords, obstr_coords, max_x, max_y = parse_input() 
     distinct_route = walk_route(start_coords, obstr_coords, max_x, max_y)
     del distinct_route[start_coords]
@@ -68,8 +68,8 @@ def taskTwo():
     return count
 
 
-print(f"Part 1: {taskOne()}")
+print(f"Part 1: {task_one()}")
 print("WARNING: Part two takes ~3.5 mins (208 seconds) to run.\n"
       + "You may want to go get a coffee")
-print(f"Part 2: {taskTwo()}")
+print(f"Part 2: {task_two()}")
 

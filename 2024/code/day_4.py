@@ -67,7 +67,7 @@ def check_diagonals_down(word_search, i, j, row_len):
     return xmas_count
 
 
-def taskOne():
+def task_one():
     word_search = parse_input()
     row_len = len(word_search[0])
     xmas_count = 0
@@ -92,7 +92,7 @@ def check_diagonal_mas(word_search, i, j):
     return 1 if mas_count == 2 else 0
 
     
-def taskTwo():
+def task_two():
     word_search = parse_input() 
     mas_count = 0
     for i, row in enumerate(word_search[1:-1]):
@@ -102,5 +102,5 @@ def taskTwo():
     return mas_count
 
 
-print(f"Part 1: {taskOne()}")
-print(f"Part 2: {taskTwo()}")
+print(f"Part 1: {task_one()}")
+print(f"Part 2: {task_two()}")

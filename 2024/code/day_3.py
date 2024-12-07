@@ -21,7 +21,7 @@ def parse_input(task):
     return [j for i in instructions for j in i]
      
 
-def taskOne(): 
+def task_one(): 
     # Valid mul instructions
     valid_instructions = parse_input(1)
     total = 0
@@ -32,7 +32,7 @@ def taskOne():
     return total
 
 
-def taskTwo():
+def task_two():
     # Valid mul, do, don't instructions
     valid_instructions = parse_input(2)
     ignore = False  
@@ -49,5 +49,5 @@ def taskTwo():
     return total
 
 
-print(f"Part 1: {taskOne()}")
-print(f"Part 2: {taskTwo()}")
+print(f"Part 1: {task_one()}")
+print(f"Part 2: {task_two()}")

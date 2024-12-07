@@ -33,7 +33,7 @@ def evaulate_level(level, n):
     else: return 0
 
 
-def taskOne():
+def task_one():
     levels = parse_input()
     safe_levels = 0 
     for level in levels:
@@ -43,7 +43,7 @@ def taskOne():
     return safe_levels
 
 
-def taskTwo():
+def task_two():
     levels = parse_input()
     safe_levels = 0  
     for level in levels:
@@ -61,5 +61,5 @@ def taskTwo():
                 break 
     return safe_levels
 
-print(f"Part 1: {taskOne()}")
-print(f"Part 2: {taskTwo()}")
+print(f"Part 1: {task_one()}")
+print(f"Part 2: {task_two()}")

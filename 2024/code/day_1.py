@@ -17,7 +17,7 @@ def get_file_input():
     
     return left_list, right_list
 
-def taskOne(): 
+def task_one(): 
     left_list, right_list = get_file_input() 
     
     # Sort both lists
@@ -30,7 +30,7 @@ def taskOne():
         total += abs(left_num - right_num)
     return total
 
-def taskTwo():
+def task_two():
     left_list, right_list = get_file_input()    
     # Map left list numbers to occurences in right list
     num_to_occur = {val : 0 for val in left_list} 
@@ -45,5 +45,5 @@ def taskTwo():
         total += num * num_to_occur[num]    
     return total
 
-print(f"Part 1: {taskOne()}")
-print(f"Part 2: {taskTwo()}")
+print(f"Part 1: {task_one()}")
+print(f"Part 2: {task_two()}")

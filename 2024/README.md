@@ -8,6 +8,8 @@
 |[3.](/2024/code/day_3.py)   | :star: :star:    |
 |[4.](/2024/code/day_4.py)   | :star: :star:    |
 |[5.](/2024/code/day_5.py)   | :star: :star:    |
+|[6.](/2024/code/day_6.py)   | :star: :star:    |
+|[7.](/2024/code/day_7.py)   | :star: :star:    |
 
 
 Back to: [README.md](../README.md)
