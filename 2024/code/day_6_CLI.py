@@ -1,7 +1,7 @@
 
 import time 
-import os
 import copy 
+import os
 
 DEFAULT_MAP = ["....#.....", 
              ".........#", 
@@ -26,18 +26,24 @@ route_map = None
 placeable_obstacles, loop_number = 0, 1
 idx = 0
 
-def print_map(task, num_positions):
+def print_map(task, num_positions, clear_flag=True):
     global placeable_obstacles, idx
-    os.system('cls' if os.name == 'nt' else 'clear')  
-    print(f"TASK: {task}")
-    for row in route_map: print(row) 
-    print(f"Current Direction: {DIRECTIONS[idx]}\n"+
-          f"Distinct Positions: {num_positions} ")  
+     
+    output = [f"\rTASK: {task}"]
+    for row in route_map: output.append(row)
+    output.append(f"Current Direction: {DIRECTIONS[idx]}")
+    output.append(f"Distinct Positions: {num_positions}")
     if(task == 2): 
-        print(f"Loop Number: {loop_number}\n" +
-              f"Placeable Obstructions: {placeable_obstacles}")
+        output.append(f"Loop Number: {loop_number}")
+        output.append(f"Placeable Obstructions: {placeable_obstacles}")
         sleep_time = 0.01
-    else: sleep_time = 0.5
+    else: sleep_time = 0.5 
+    print(f"\033[{len(output)}A", end="")
+    for j, line in enumerate(output):
+        if("Current Direction" in line): 
+            output[j] = f"Current Direction: {DIRECTIONS[idx]}"
+        print("\033[K", end="") 
+        print(output[j])
     time.sleep(sleep_time)
 
 
@@ -107,8 +113,8 @@ def visualise_task_two():
         route_visited, is_loop = walk_route(2, start_pos)
         if(is_loop): placeable_obstacles += 1    
         loop_number += 1
-    print_map(2, len(route_visited))
+    print_map(2, len(route_visited), False)
         
-    
+os.system('cls' if os.name == 'nt' else 'clear')
 visualise_task_one()
 visualise_task_two()
