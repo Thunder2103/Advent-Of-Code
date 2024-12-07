@@ -1,7 +1,8 @@
 import os 
 import importlib
 import random
-import re
+import re 
+import sys
 
 if(__name__ != "__main__"): 
     print("This has nothing to import")
@@ -80,7 +81,9 @@ def dayCommands(year):
 
 def outputDay(year, day, dayNumber):
     print(f"Solutions for Day {dayNumber}:")
-    day = importlib.import_module(f"{year}.code.{day}")
+    module_name = f"{year}.code.{day}"
+    importlib.import_module(module_name)
+    del sys.modules[module_name]
 
 
 def recommendSong():
