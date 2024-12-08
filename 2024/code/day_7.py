@@ -1,5 +1,4 @@
 import re 
-import time
 if(__name__ == "__main__"):
     from puzzle_input import getFilePath
 else:
@@ -44,13 +43,11 @@ def is_solvable_two(target, current, arr):
 
      
 def task_two(): 
-    start = time.time()
     target_values = parse_input() 
     calibration_result = 0
     for target, values in target_values: 
         if is_solvable_two(target, values[0], values[1:]): 
             calibration_result += target  
-    print(time.time() - start)
     return calibration_result 
 
 
