@@ -17,8 +17,7 @@ def parse_input():
                 else: antenna_coords[char].append((j, i)) 
         boundaries["max_x"] = len(line) - 1
         boundaries["max_y"] = j 
-    
-    return (antenna_coords, boundaries)
+    return (list(antenna_coords.values()), boundaries)
 
 
 def validate_antinode(antinode, boundaries):
@@ -33,7 +32,7 @@ def validate_antinode(antinode, boundaries):
 def task_one():
     antenna_coords, boundaries = parse_input() 
     antinodes = set()
-    for _, coords in antenna_coords.items():
+    for coords in antenna_coords:
         for i, main_antenna in enumerate(coords):
             for check_antenna in coords[i + 1:]: 
                 antenna_dist = tuple(x - y for x, y in zip(main_antenna, check_antenna)) 
@@ -49,12 +48,11 @@ def task_one():
 def task_two(): 
     antenna_coords, boundaries = parse_input() 
     antinodes = set()
-    for _, coords in antenna_coords.items(): 
-        if(len(coords) > 1):
-            for coord in coords:
-                antinodes.add(coord)
+    for coords in antenna_coords: 
         for i, main_antenna in enumerate(coords):
             for check_antenna in coords[i + 1:]: 
+                antinodes.add(main_antenna)
+                antinodes.add(check_antenna)
                 antenna_dist = tuple(x - y for x, y in zip(main_antenna, check_antenna)) 
                 antinode = tuple(x + y for x, y in zip(main_antenna, antenna_dist))  
                 while(validate_antinode(antinode, boundaries)):
