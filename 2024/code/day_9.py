@@ -3,7 +3,6 @@ if(__name__ == "__main__"):
 else:
     from .puzzle_input import getFilePath
 
-import time
 
 def parse_input():  
         id_count, pos = 0, 0 
@@ -69,7 +68,6 @@ def get_leftmost_free(split_free_spaces, file_info):
 
 def task_two():  
     file_spaces, free_spaces, _ = parse_input() 
-    s = time.time()
     split_free_spaces = process_free_spaces(free_spaces)
     for id in list(file_spaces.keys())[::-1]:
         idx, free_loc = get_leftmost_free(split_free_spaces, file_spaces[id])
