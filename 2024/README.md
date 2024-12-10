@@ -2,7 +2,7 @@
 
 
 | Day:                       | Stars:           |
-| -------------------------- | -----------------| 
+| -------------------------- | ---------------- | 
 |[1.](/2024/code/day_1.py)   | :star: :star:    |
 |[2.](/2024/code/day_2.py)   | :star: :star:    |
 |[3.](/2024/code/day_3.py)   | :star: :star:    |
@@ -12,6 +12,7 @@
 |[7.](/2024/code/day_7.py)   | :star: :star:    |
 |[8.](/2024/code/day_8.py)   | :star: :star:    |
 |[9.](/2024/code/day_9.py)   | :star: :star:    |
+|[10.](/2024/code/day_10.py) | :star: :star:    |
 
 
 Back to: [README.md](../README.md)
